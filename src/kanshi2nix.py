@@ -216,12 +216,17 @@ nix_output = list(dict())
 for profile in profiles:
     outputs = list(dict())
     for output in profile.outputs:
+        enabled = None
+        if output.enabled:
+            enabled = "enable"
+        else:
+            enabled = "false"
         outputs.append({
             "criteria": output.identifier,
             "position": output.position,
             "mode": output.mode,
-            "scale": str(output.scale),
-            "enabled": output.enabled,
+            "scale": output.scale,
+            "status": enabled,
             "transform": output.transform,
         })
     nix_output.append({"profile": {
