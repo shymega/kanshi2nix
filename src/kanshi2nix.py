@@ -221,7 +221,7 @@ for profile in profiles:
             "position": output.position,
             "mode": output.mode,
             "scale": str(output.scale),
-            "enabled": str(output.enabled),
+            "enabled": output.enabled,
             "transform": output.transform,
         })
     nix_output.append({"profile": {
