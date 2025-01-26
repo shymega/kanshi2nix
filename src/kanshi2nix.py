@@ -225,7 +225,7 @@ for profile in profiles:
             "criteria": output.identifier,
             "position": output.position,
             "mode": output.mode,
-            "scale": output.scale,
+            "scale": float(output.scale),
             "status": enabled,
             "transform": output.transform,
         })
